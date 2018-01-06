@@ -1,0 +1,20 @@
+<h2>My purchases</h2>
+<div>
+	<label>New Transaction:
+		<input #newTransaction />
+	</label>
+	<button (click)="add(newTransaction.value); newTransaction.value=''">
+		add
+	</button>
+</div>
+
+<ul class="transactions">
+  <li *ngFor="let transaction of transactions" >
+  	<a routerLink="/detail/{{transaction.id}}">
+    	<span class="badge">{{transaction.coin}}</span> {{transaction.amount}} coins @ {{transaction.price}}
+  	</a>
+  	<button class="delete" title="delete transaction" (click)="delete(transaction)">x</button>
+  </li>
+</ul>
+
+

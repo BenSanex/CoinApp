@@ -1,0 +1,22 @@
+
+<div *ngIf="transaction">
+	<h2>{{ transaction.coin | uppercase }} Details</h2>
+
+	<div>
+  		<label>Coin:
+    		<input [(ngModel)]="transaction.coin" placeholder="coin">
+  		</label>
+  	</div>
+  	<div>
+  		<label>Amount:
+    		<input [(ngModel)]="transaction.amount" placeholder="coin">
+    	</label>
+    </div>
+    <div>
+    	<label>Price:
+    		<input [(ngModel)]="transaction.price" placeholder="coin">
+    	</label>
+	</div>
+</div>
+<button (click)="save()">Save</button>
+<button (click)="goBack()">Go Back</button>
